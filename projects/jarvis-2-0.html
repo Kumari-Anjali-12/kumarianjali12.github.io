@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis 2.0 | Project Detail</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Add specific styles for the detail page content (copied from previous correction) */
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 150px; /* Space below fixed header */
+        }
+        .project-detail h1 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        .project-detail .tech-stack {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tech-stack span {
+            background-color: var(--accent-purple);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .project-detail p, .project-detail ul {
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        .project-detail h3 {
+            color: var(--text-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+        .project-actions a {
+            margin-right: 15px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AK.</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+            <h1>Jarvis 2.0: AI Virtual Assistant</h1>
+            
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>Speech Recognition</span>
+                <span>gTTS</span>
+                <span>PyAudio</span>
+                <span>Web Automation</span>
+            </div>
+
+            <h2>Project Summary</h2>
+            <p>**Jarvis 2.0** is a sophisticated, voice-activated virtual desktop assistant designed to automate routine tasks and provide quick, hands-free access to information. Built primarily with Python, this project focuses on robust speech-to-text processing and efficient command execution, moving beyond simple scripting to offer a more interactive user experience.</p>
+
+            <h3>Key Features and Functionalities</h3>
+            <ul>
+                <li>**Voice Command Interface:** Utilizes the `SpeechRecognition` library to accurately transcribe spoken queries into text commands.</li>
+                <li>**Task Automation:** Capable of opening specific applications, playing music, setting reminders, and performing system operations using dedicated Python modules.</li>
+                <li>**Information Retrieval:** Can fetch real-time data like current time, date, and weather, and answer general knowledge questions by integrating with APIs and web scraping tools.</li>
+                <li>**Text-to-Speech Feedback:** Leverages the **Google Text-to-Speech (gTTS)** library to provide natural and responsive audio feedback to the user, enhancing the assistant's personality and usability.</li>
+            </ul>
+
+            <h3>Learning & Development Focus</h3>
+            <p>Developing Jarvis 2.0 strengthened my skills in **API integration**, **desktop automation**, and handling **real-time audio stream processing**. It was a practical exercise in engineering a system where multiple components (audio, processing, feedback) must work synchronously and reliably.</p>
+
+            <div class="project-actions">
+                <a href="[Your GitHub Link for Jarvis]" target="_blank" class="cta-button">View Code on GitHub <i class="fab fa-github"></i></a>
+            </div>
+
+            <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Anjali Kumari. Crafted with code and creativity.</p>
+    </footer>
+
+</body>
+</html>

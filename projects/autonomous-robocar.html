@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Robo-Car | PCCoE Roborashtra</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Add specific styles for the detail page content (copied from previous correction) */
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 150px; /* Space below fixed header */
+        }
+        .project-detail h1 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        .project-detail .tech-stack {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tech-stack span {
+            background-color: var(--accent-purple);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .project-detail p, .project-detail ul {
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        .project-detail h3 {
+            color: var(--text-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+        .project-actions a {
+            margin-right: 15px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        /* New style to visually separate the team/event info */
+        .event-info {
+            background-color: var(--bg-light);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .event-info p {
+            margin: 5px 0;
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AK.</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+            <h1>Autonomous Robo-Car: Roborashtra 2023</h1>
+            
+            <div class="event-info">
+                <p><i class="fas fa-trophy"></i> **Competition:** PCCoE Roborashtra 2023</p>
+                <p><i class="fas fa-users"></i> **Nature:** Team Project</p>
+            </div>
+
+            <div class="tech-stack">
+                <span>Arduino UNO</span>
+                <span>C/C++ (Embedded)</span>
+                <span>Ultrasonic Sensors</span>
+                <span>Hardware Interfacing</span>
+            </div>
+
+            <h2>Project Summary</h2>
+            <p>This project was the centerpiece of our entry into the **PCCoE Roborashtra 2023** competition. Our team designed, assembled, and programmed a mobile robot tasked with autonomously navigating a complex track while performing dynamic obstacle avoidance. This initiative was a deep dive into embedded systems, teamwork, and competitive control logic.</p>
+
+            <h3>Key Contributions and Implementation</h3>
+            <ul>
+                <li>**Control Unit:** Utilized the **Arduino UNO** microcontroller for processing sensor input and executing motor commands in a time-critical environment.</li>
+                <li>**Sensing & Logic:** Integrated Ultrasonic Sensors (HC-SR04) to provide real-time distance measurements. I contributed significantly to implementing the **Obstacle Avoidance Logic** in C/C++, focusing on smooth deceleration and optimal re-routing paths.</li>
+                <li>**Teamwork & Testing:** Coordinated rigorous field testing sessions with the team, iterating on the physical build and tuning the PID-like parameters in the software for peak competitive performance.</li>
+            </ul>
+
+            <h3>Competition Outcome & Evidence</h3>
+            <p>While the focus was on the engineering challenge, the project's success is documented through competition recognition and visual assets.</p>
+
+            <div class="project-actions">
+                <a href="[Link to Certificate PDF or Image]" target="_blank" class="cta-button" style="background-color: var(--accent-purple); color: var(--text-primary); border: 2px solid var(--accent-purple);"><i class="fas fa-certificate"></i> View Certificate</a>
+                
+                <a href="[Link to Project Photos/Gallery]" target="_blank" class="cta-button"><i class="fas fa-images"></i> View Project Photos</a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.95rem; color: var(--text-secondary);">*Note: Due to the competitive nature and shared resources, the final source code for this specific event is not publicly available.</p>
+
+            <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Anjali Kumari. Crafted with code and creativity.</p>
+    </footer>
+
+</body>
+</html>

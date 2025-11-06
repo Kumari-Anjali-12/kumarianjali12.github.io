@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Mirror | Project Detail</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Add specific styles for the detail page content */
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 150px; /* Space below fixed header */
+        }
+        .project-detail h1 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        .project-detail .tech-stack {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tech-stack span {
+            background-color: var(--accent-purple);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .project-detail p, .project-detail ul {
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        .project-detail h3 {
+            color: var(--text-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 10px;
+        }
+        .project-actions a {
+            margin-right: 15px;
+        }
+        /* Style for the back button */
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AK.</div>
+            </nav>
+    </header>
+
+    <main>
+        <section class="project-detail">
+            <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+            <h1>Mental Health Mirror</h1>
+            
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>TensorFlow</span>
+                <span>OpenCV</span>
+                <span>NLP (NLTK)</span>
+                <span>Deep Learning (CNNs, LSTMs)</span>
+            </div>
+
+            <h2>Project Summary</h2>
+            <p>The Mental Health Mirror is a pioneering multi-modal system designed to assess an individual's emotional state by analyzing both text (spoken or typed) and facial expressions. The goal is to provide a non-intrusive, real-time tool for monitoring emotional well-being, which can be invaluable in preliminary mental health screening.</p>
+
+            <h3>Key Features and Modules</h3>
+            <ul>
+                <li><strong>Facial Emotion Recognition:</strong> Uses a Convolutional Neural Network (CNN) trained on the FER2013 dataset via OpenCV to detect seven primary emotions (anger, disgust, fear, happiness, sadness, surprise, neutral) in real-time video feeds.</li>
+                <li><strong>Text Sentiment Analysis:</strong> Employs Natural Language Processing (NLP) techniques, including an LSTM model, to analyze the sentiment of user input (e.g., diary entries or transcribed speech).</li>
+                <li><strong>Multi-Modal Fusion:</strong> A custom-designed algorithm combines the confidence scores from the visual and textual models to output a final, more robust emotional assessment score, mitigating the noise from single-source detection.</li>
+            </ul>
+
+            <h3>Real-World Impact</h3>
+            <p>This project demonstrates the powerful application of Deep Learning in social and human-centric computing. It has potential uses in remote patient monitoring, user experience testing, and creating more empathetic AI interfaces.</p>
+
+            <div class="project-actions">
+                <a href="[Your GitHub Link]" target="_blank" class="cta-button">View Code on GitHub <i class="fab fa-github"></i></a>
+                </div>
+
+            <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Anjali Kumari. Crafted with code and creativity.</p>
+    </footer>
+
+</body>
+</html>
