@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anjali Kumari | AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +17,11 @@
             <div class="logo">AK.</div>
             <ul>
                 <li><a href="#timeline">Journey</a></li>
+                <li><a href="#certifications">Certs</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Awards</a></li>
+                <li><a href="#medium">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -29,15 +33,18 @@
                 <h1 class="line1">Anjali Kumari</h1>
                 <h2 class="line2">B.Tech CSE (AI & Machine Learning)</h2>
                 <p class="line3">A third-year student specializing in AI & ML, passionate about transforming complex problems into intelligent, real-world solutions. Welcome to my digital laboratory.</p>
-                <a href="#projects" class="cta-button line4">View My Creations</a>
+                <div class="social-links line4">
+                    <a href="https://github.com/Kumari-Anjali-12" target="_blank" title="View my GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/anjali-kumari-ab0300292" target="_blank" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <a href="#projects" class="cta-button line5">View My Creations</a>
             </div>
         </section>
 
         <section id="timeline">
-            <h2>My Alchemical Journey</h2>
+             <h2>My Alchemical Journey</h2>
             <div class="timeline-container">
-                <div class="timeline-line"></div>
-                <div class="timeline-item">
+                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h3>B.Tech - AI & ML</h3>
@@ -64,6 +71,89 @@
             </div>
         </section>
 
+        <section id="certifications">
+            <h2>My Certification Library</h2>
+            <div class="filter-buttons">
+                <button class="cert-filter-btn active" data-filter="all">All</button>
+                <button class="cert-filter-btn" data-filter="redhat">Red Hat</button>
+                <button class="cert-filter-btn" data-filter="aws">AWS</button>
+                <button class="cert-filter-btn" data-filter="agile">Agile</button>
+                <button class="cert-filter-btn" data-filter="blockchain">Blockchain</button>
+                <button class="cert-filter-btn" data-filter="ai">AI</button>
+            </div>
+            
+            <div class="certification-gallery">
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_getting-started-with-linux-fundamentals-activity-7387329510574268416-x7sj" target="_blank" class="cert-card cat-redhat" data-category="redhat">
+                    <h3>Getting Started with Linux Fundamentals (RH104)</h3>
+                    <p>Mastered core Linux commands, file system navigation, and basic shell scripting in a Red Hat environment.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_introduction-to-openshift-applications-do101-activity-7387691896208384000-uhY3" target="_blank" class="cert-card cat-redhat" data-category="redhat">
+                    <h3>Introduction to OpenShift Applications (DO101)</h3>
+                    <p>Learned to deploy, manage, and scale containerized applications on the Red Hat OpenShift platform.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_red-hat-system-administration-i-rh124-activity-7388054273890316288-Jz10" target="_blank" class="cert-card cat-redhat" data-category="redhat">
+                    <h3>Red Hat System Administration I (RH124)</h3>
+                    <p>Gained core system administration skills for Red Hat Enterprise Linux, including installation and configuration.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_red-hat-system-administration-ii-rh134-activity-7388416658920521728-9sDf" target="_blank" class="cert-card cat-redhat" data-category="redhat">
+                    <h3>Red Hat System Administration II (RH134)</h3>
+                    <p>Developed advanced skills in RHEL administration, focusing on automation and service management.</p>
+                </a>
+                <a href="#" target="_blank" class="cert-card cat-redhat" data-category="redhat">
+                    <h3>Red Hat Application Development I: Java EE (AD183)</h3>
+                    <p>Focused on developing and deploying enterprise-level Java applications. (Link pending)</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_aws-academy-graduate-cloud-foundations-activity-7388779064683241472-eBTl" target="_blank" class="cert-card cat-aws" data-category="aws">
+                    <h3>AWS Academy Graduate – Cloud Foundations</h3>
+                    <p>Gained a foundational understanding of AWS cloud concepts, core services, security, and pricing.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_aws-academy-graduate-cloud-architecting-activity-7389141488007315456-a4D5" target="_blank" class="cert-card cat-aws" data-category="aws">
+                    <h3>AWS Academy Graduate – Cloud Architecting</h3>
+                    <p>Learned to design and deploy scalable, highly available, and fault-tolerant systems on AWS.</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_agile-project-management-activity-7384634236076486657-l-NU" target="_blank" class="cert-card cat-agile" data-category="agile">
+                    <h3>Agile Project Management (Google / Coursera)</h3>
+                    <p>Mastered Agile methodologies, Scrum frameworks, and project management techniques from Google.</p>
+                </a>
+                <a href="#" target="_blank" class="cert-card cat-agile" data-category="agile">
+                    <h3>Agile with Atlassian Jira (Atlassian / Coursera)</h3>
+                    <p>Learned to apply Agile principles using Atlassian Jira for issue tracking and project management. (Link pending)</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc" target="_blank" class="cert-card cat-blockchain" data-category="blockchain">
+                    <h3>Blockchain Basics (SUNY)</h3>
+                    <p>Explored the fundamental concepts of blockchain technology, cryptography, and decentralized networks.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc" target="_blank" class="cert-card cat-blockchain" data-category="blockchain">
+                    <h3>Smart Contracts (SUNY)</h3>
+                    <p>Learned to program and deploy smart contracts on blockchain platforms like Ethereum.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc" target="_blank" class="cert-card cat-blockchain" data-category="blockchain">
+                    <h3>Decentralized Applications (DApps) (SUNY)</h3>
+                    <p>Understood the architecture and development process for building Decentralized Applications (DApps).</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc" target="_blank" class="cert-card cat-blockchain" data-category="blockchain">
+                    <h3>Blockchain Platforms (SUNY)</h3>
+                    <p>Analyzed and compared various blockchain platforms and their specific use cases.</p>
+                </a>
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc" target="_blank" class="cert-card cat-blockchain" data-category="blockchain">
+                    <h3>Blockchain Specialization Certificate (SUNY)</h3>
+                    <p>Completed the full specialization from SUNY, demonstrating comprehensive knowledge of blockchain technology.</p>
+                </a>
+                
+                <a href="#" target="_blank" class="cert-card cat-ai" data-category="ai">
+                    <h3>Getting Started with Artificial Intelligence</h3>
+                    <p>Acquired foundational knowledge of AI concepts, machine learning, and neural networks. (Link pending)</p>
+                </a>
+                 <a href="#" target="_blank" class="cert-card cat-ai" data-category="ai">
+                    <h3>IBM SkillsBuild - AI for Everyone</h3>
+                    <p>Explored AI applications, concepts of machine learning, and the societal ethics of AI. (Link pending)</p>
+                </a>
+            </div>
+        </section>
+
         <section id="skills">
             <h2>The Cauldron of Skills</h2>
             <div class="skills-galaxy">
@@ -78,38 +168,96 @@
                 <button class="filter-btn" data-filter="robotics">Robotics</button>
             </div>
             <div class="project-gallery">
-                <div class="project-card" data-category="ai-ml">
+                 <div class="project-card" data-category="ai-ml">
                     <div class="card-inner">
-                        <div class="card-front">
-                            <h3>Mental Health Mirror</h3>
-                        </div>
-                        <div class="card-back">
-                            <p>Multi-modal emotion detection using NLP & Computer Vision to assess emotional well-being. Built with Python, OpenCV, and TensorFlow.</p>
-                        </div>
+                        <div class="card-front"><h3>Mental Health Mirror</h3></div>
+                        <div class="card-back"><p>Multi-modal emotion detection using NLP & Computer Vision to assess emotional well-being. Built with Python, OpenCV, and TensorFlow.</p></div>
                     </div>
                 </div>
                 <div class="project-card" data-category="ai-ml">
                      <div class="card-inner">
-                        <div class="card-front">
-                            <h3>Jarvis 2.0</h3>
-                        </div>
-                        <div class="card-back">
-                           <p>AI Virtual Assistant for task automation using Speech Recognition and Text-to-Speech. Built with Python libraries like PyAudio & gTTS.</p>
-                        </div>
+                        <div class="card-front"><h3>Jarvis 2.0</h3></div>
+                        <div class="card-back"><p>AI Virtual Assistant for task automation using Speech Recognition and Text-to-Speech. Built with Python libraries like PyAudio & gTTS.</p></div>
                     </div>
                 </div>
                 <div class="project-card" data-category="robotics">
                     <div class="card-inner">
-                        <div class="card-front">
-                           <h3>Autonomous Robo-Car</h3>
-                        </div>
-                        <div class="card-back">
-                           <p>Designed and built a robotic car for track navigation using Arduino, ultrasonic sensors, and obstacle avoidance logic.</p>
-                        </div>
+                        <div class="card-front"><h3>Autonomous Robo-Car</h3></div>
+                        <div class="card-back"><p>Designed and built a robotic car for track navigation using Arduino, ultrasonic sensors, and obstacle avoidance logic.</p></div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="achievements">
+            <h2>Achievements & Recognition</h2>
+            <div class="achievements-grid">
+                
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_smartindiahackathon2025-smartindiahackathon-activity-7383509331205492736-Ukmk" target="_blank" class="achievement-card">
+                    <div class="ach-icon">💡</div>
+                    <h3>SIH Internal Hackathon 2025</h3>
+                    <p>Our team, HealthBridge, was selected as a top 20 finalist from 100+ teams for our 'AI-Driven Chatbot' prototype.</p>
+                </a>
+                
+                <a href="https://www.linkedin.com/posts/anjali-kumari-ab0300292_deloitte-dataanalytics-virtualexperience-activity-7392181471618269184-f967" target="_blank" class="achievement-card">
+                    <div class="ach-icon">📊</div>
+                    <h3>Deloitte Data Analytics Virtual Experience</h3>
+                    <p>Completed a job simulation analyzing client data with Tableau and performing forensic analysis with Excel.</p>
+                </a>
+                
+                <div class="achievement-card">
+                    <div class="ach-icon">🏆</div>
+                    <h3>Winner, Anantam 2024</h3>
+                    <p>Secured the top position in the cultural fest dance competition.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="ach-icon">🤖</div>
+                    <h3>Robotics Innovation</h3>
+                    <p>Recognized by college faculty for innovation in robotics during the Roborashtra competition.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="ach-icon"> academically</div>
+                    <h3>Academic Excellence</h3>
+                    <p>Consistently secured an 8.90 CGPA in the B.Tech program to date.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="ach-icon">🤝</div>
+                    <h3>Event Management</h3>
+                    <p>Actively contributed to organizing and managing the "Deutschfeast" German event in college.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="medium">
+            <h2>From My Blog</h2>
+            <div class="medium-grid">
+                
+                <a href="https://medium.com/@Anjali-Kumari-26/my-journey-through-deloitte-australias-data-analytics-virtual-experience-53f0de99d487" target="_blank" class="medium-card">
+                    <div class="medium-image" id="blog-img-1"></div>
+                    <h3>My Journey Through Deloitte's Data Analytics Virtual Experience</h3>
+                    <p>A 2-min read on completing the simulation, analyzing client data in Tableau, and exploring forensic technology in Excel.</p>
+                    <span>Read More &rarr;</span>
+                </a>
+                
+                <a href="https://medium.com/@Anjali-Kumari-26/a-small-step-into-writing-a-big-hope-for-growth-0440eb8a3891" target="_blank" class="medium-card">
+                    <div class="medium-image" id="blog-img-2"></div>
+                    <h3>My First Step Into Writing on Medium</h3>
+                    <p>A 1-min read about my motivations for starting a blog to document my journey in tech, AI, and personal growth.</p>
+                    <span>Read More &rarr;</span>
+                </a>
+                
+                <a href="https://medium.com/@Anjali-Kumari-26" target="_blank" class="medium-card medium-card-more">
+                    <div class="more-content">
+                        <i class="fab fa-medium"></i>
+                        <h3>View All Posts</h3>
+                        <p>See all my articles and follow me on Medium.</p>
+                        <span>Go to Profile &rarr;</span>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+
 
         <section id="contact">
             <h2>The Scroll of Communication</h2>
@@ -120,6 +268,10 @@
     </main>
 
     <footer>
+        <div class="social-links">
+            <a href="https://github.com/Kumari-Anjali-12" target="_blank" title="View my GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/anjali-kumari-ab0300292" target="_blank" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
         <p>&copy; 2025 Anjali Kumari. Crafted with code and creativity.</p>
     </footer>
 
