@@ -1,188 +1,77 @@
-document.addEventListener('DOMContentLoaded', function() {
+// ====== EDIT THESE LINKS ======
+// Paste the real URLs between the quotes. Empty = the button/link stays hidden.
+const LINKS = {
+  rag: "https://github.com/Kumari-Anjali-12/hhg-voice-rag",        // GitHub: voice RAG
+  ragPost: "https://lnkd.in/p/dS8VsZgC",                           // LinkedIn post: voice RAG / HH Goa
+  facechain: "https://github.com/Kumari-Anjali-12/FaceTheChain",   // GitHub: FaceTheChain
+  sih2026: "https://lnkd.in/p/dGgwpqpM",                           // LinkedIn post: SIH 2026
+  medscribe: "https://github.com/Kumari-Anjali-12/MedScribeAI",   // GitHub: MedScribeAI (private, ongoing)
+  mhm: "https://github.com/Kumari-Anjali-12/mental-health-mirror",  // GitHub: Mental Health Mirror
+  resume: ""                                                       // e.g. "resume.pdf" (button hidden while empty)
+};
+// ==============================
 
-    // --- Register GSAP Plugins ---
-    gsap.registerPlugin(ScrollTrigger);
+const CERTS = [{"t": "Getting Started with Linux Fundamentals (RH104)", "c": "redhat", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_getting-started-with-linux-fundamentals-activity-7387329510574268416-x7sj"}, {"t": "Introduction to OpenShift Applications (DO101)", "c": "redhat", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_introduction-to-openshift-applications-do101-activity-7387691896208384000-uhY3"}, {"t": "Red Hat System Administration I (RH124)", "c": "redhat", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_red-hat-system-administration-i-rh124-activity-7388054273890316288-Jz10"}, {"t": "Red Hat System Administration II (RH134)", "c": "redhat", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_red-hat-system-administration-ii-rh134-activity-7388416658920521728-9sDf"}, {"t": "Red Hat Application Development I: Java EE (AD183)", "c": "redhat", "u": ""}, {"t": "AWS Academy Graduate – Cloud Foundations", "c": "aws", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_aws-academy-graduate-cloud-foundations-activity-7388779064683241472-eBTl"}, {"t": "AWS Academy Graduate – Cloud Architecting", "c": "aws", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_aws-academy-graduate-cloud-architecting-activity-7389141488007315456-a4D5"}, {"t": "Agile Project Management (Google / Coursera)", "c": "agile", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_agile-project-management-activity-7384634236076486657-l-NU"}, {"t": "Agile with Atlassian Jira (Atlassian / Coursera)", "c": "agile", "u": ""}, {"t": "Blockchain Basics (SUNY)", "c": "blockchain", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc"}, {"t": "Smart Contracts (SUNY)", "c": "blockchain", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc"}, {"t": "Decentralized Applications (DApps) (SUNY)", "c": "blockchain", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc"}, {"t": "Blockchain Platforms (SUNY)", "c": "blockchain", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc"}, {"t": "Blockchain Specialization Certificate (SUNY)", "c": "blockchain", "u": "https://www.linkedin.com/posts/anjali-kumari-ab0300292_blockchain-smartcontracts-dapps-activity-7384838103364014081-fVOc"}];
+const LABEL = {redhat:"Red Hat",aws:"AWS",agile:"Agile",blockchain:"Blockchain",ai:"AI"};
 
-    // --- Hero Section Animation ---
-    const heroTimeline = gsap.timeline();
-    heroTimeline.from('.line1', { duration: 0.8, y: 100, opacity: 0, ease: 'power3.out' })
-                .from('.line2', { duration: 0.8, y: 100, opacity: 0, ease: 'power3.out' }, '-=0.6')
-                .from('.line3', { duration: 0.8, y: 50, opacity: 0, ease: 'power3.out' }, '-=0.6')
-                .from('.line4', { duration: 0.8, y: 50, opacity: 0, ease: 'power3.out' }, '-=0.6') // .social-links
-                .from('.line5', { duration: 0.8, y: 50, opacity: 0, ease: 'power3.out' }, '-=0.6'); // .cta-button
+document.querySelectorAll('[data-link]').forEach(el => {
+  const url = LINKS[el.dataset.link];
+  if (url) { el.href = url; el.hidden = false; }
+  else if (el.tagName === 'A' && !el.classList.contains('link')) { el.removeAttribute('href'); }
+});
 
+const certBox = document.getElementById('certs');
+certBox.innerHTML = CERTS.map(c => {
+  const tag = c.u ? 'a' : 'div';
+  const href = c.u ? ` href="${c.u}" target="_blank"` : '';
+  return `<${tag} class="card cert" data-c="${c.c}"${href}><small>${LABEL[c.c]}</small><h3>${c.t}</h3></${tag}>`;
+}).join('');
 
-    // --- Timeline Scroll Animation ---
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach(item => {
-        gsap.from(item, {
-            scrollTrigger: {
-                trigger: item,
-                start: 'top 85%',
-                end: 'bottom 60%',
-                toggleActions: 'play none none none',
-            },
-            opacity: 0,
-            x: item.offsetLeft > 0 ? 100 : -100,
-            duration: 1,
-            ease: 'power3.out'
-        });
-    });
+document.querySelectorAll('.filters').forEach(box => {
+  const items = () => document.querySelectorAll('#' + box.dataset.target + ' > [data-c]');
+  box.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    box.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+    items().forEach(i => i.hidden = !(b.dataset.f === 'all' || i.dataset.c === b.dataset.f));
+  });
+});
 
-    // --- Certification Gallery Filter ---
-    const certFilterButtons = document.querySelectorAll('.cert-filter-btn');
-    const certCards = document.querySelectorAll('.cert-card');
+const menuBtn = document.querySelector('.menu-btn'), nav = document.querySelector('nav');
+menuBtn.addEventListener('click', () => menuBtn.setAttribute('aria-expanded', nav.classList.toggle('open')));
+nav.addEventListener('click', e => { if (e.target.tagName === 'A') nav.classList.remove('open'); });
 
-    certFilterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Check if the button is already active, if so, do nothing
-            // This allows the link to be clicked if the filter is already active
-            if (button.classList.contains('active')) {
-                // Let the link click go through
-                return;
-            }
-            
-            e.preventDefault(); // Prevent link click ONLY if changing filter
-            e.stopPropagation(); // Stop event from bubbling
-            
-            certFilterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-            const filter = button.dataset.filter;
+const els = document.querySelectorAll('.card, .t-item');
+els.forEach(el => el.classList.add('reveal'));
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .08});
+  els.forEach(el => io.observe(el));
+} else els.forEach(el => el.classList.add('in'));
 
-            certCards.forEach(card => {
-                const category = card.dataset.category;
-                const shouldShow = filter === 'all' || filter === category;
+// ---- scroll progress bar ----
+const bar = document.getElementById('bar');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, {passive: true});
 
-                gsap.to(card, {
-                    duration: 0.5,
-                    opacity: shouldShow ? 1 : 0,
-                    scale: shouldShow ? 1 : 0.8,
-                    display: shouldShow ? 'block' : 'none',
-                    ease: 'power3.out'
-                });
-            });
-        });
-    });
-    
-    // Initial load animation for cert cards
-    gsap.from(".cert-card", {
-        scrollTrigger: {
-            trigger: "#certifications",
-            start: "top 75%",
-            toggleActions: "play none none none"
-        },
-        duration: 0.8,
-        opacity: 0,
-        y: 50,
-        stagger: 0.05,
-        ease: 'power3.out'
-    });
+// ---- typing role line ----
+const roleEl = document.getElementById('role');
+const roles = ['Odoo & AI Developer', 'Custom Odoo 19 Builder', 'Applied AI Engineer'];
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let r = 0, i = roles[0].length, del = true, hold = 20;
+  setInterval(() => {
+    if (hold > 0) { hold--; return; }
+    i += del ? -1 : 1;
+    roleEl.textContent = roles[r].slice(0, i);
+    if (del && i === 0) { del = false; r = (r + 1) % roles.length; }
+    else if (!del && i === roles[r].length) { del = true; hold = 20; }
+  }, 90);
+}
 
-
-    // --- Skills Galaxy ---
-    const skills = [
-        { name: 'Python', size: 120 }, { name: 'Java', size: 90 }, { name: 'C', size: 80 },
-        { name: 'Machine Learning', size: 140 }, { name: 'Deep Learning', size: 110 },
-        { name: 'Data Science', size: 110 }, { name: 'NLP', size: 90 },
-        { name: 'Computer Vision', size: 100 }, { name: 'OpenCV', size: 90 },
-        { name: 'Scikit-learn', size: 100 }, { name: 'TensorFlow', size: 110 },
-        { name: 'HTML/CSS', size: 90 }, { name: 'JavaScript', size: 90 },
-        { name: 'MySQL', size: 80 }, { name: 'MongoDB', size: 80 },
-        { name: 'Git & GitHub', size: 100 }, { name: 'DSA', size: 90 }
-    ];
-
-    const galaxy = document.querySelector('.skills-galaxy');
-    if (galaxy) {
-        skills.forEach(skill => {
-            const orb = document.createElement('div');
-            orb.className = 'skill-orb';
-            orb.textContent = skill.name;
-            orb.style.width = `${skill.size}px`;
-            orb.style.height = `${skill.size}px`;
-            
-            orb.style.left = `${Math.random() * (galaxy.offsetWidth - skill.size)}px`;
-            orb.style.top = `${Math.random() * (galaxy.offsetHeight - skill.size)}px`;
-            
-            galaxy.appendChild(orb);
-
-            gsap.to(orb, {
-                duration: Math.random() * 10 + 15,
-                x: (Math.random() - 0.5) * 100,
-                y: (Math.random() - 0.5) * 100,
-                repeat: -1,
-                yoyo: true,
-                ease: 'sine.inOut'
-            });
-        });
-    }
-    
-    gsap.from(".skill-orb", {
-        scrollTrigger: {
-            trigger: "#skills",
-            start: "top 70%",
-            toggleActions: "play none none none"
-        },
-        duration: 1,
-        scale: 0,
-        opacity: 0,
-        stagger: 0.1,
-        ease: 'back.out(1.7)'
-    });
-
-
-    // --- Project Gallery Filter ---
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            const filter = button.dataset.filter;
-
-            projectCards.forEach(card => {
-                const category = card.dataset.category;
-                const shouldShow = filter === 'all' || filter === category;
-
-                gsap.to(card, {
-                    duration: 0.5,
-                    opacity: shouldShow ? 1 : 0,
-                    scale: shouldShow ? 1 : 0.8,
-                    display: shouldShow ? 'block' : 'none',
-                    ease: 'power3.out'
-                });
-            });
-        });
-    });
-
-    // --- Achievements Animation ---
-    gsap.from(".achievement-card", {
-        scrollTrigger: {
-            trigger: "#achievements",
-            start: "top 75%",
-            toggleActions: "play none none none"
-        },
-        duration: 0.8,
-        opacity: 0,
-        scale: 0.8,
-        stagger: 0.2,
-        ease: 'back.out(1.7)'
-    });
-
-    // --- Medium Cards Animation ---
-    gsap.from(".medium-card", {
-        scrollTrigger: {
-            trigger: "#medium",
-            start: "top 75%",
-            toggleActions: "play none none none"
-        },
-        duration: 0.8,
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        ease: 'power3.out'
-    });
-
+// ---- count-up stats ----
+document.querySelectorAll('[data-n]').forEach(el => {
+  const end = +el.dataset.n; let n = 0;
+  const t = setInterval(() => { n++; el.textContent = n; if (n >= end) clearInterval(t); }, 90);
 });
